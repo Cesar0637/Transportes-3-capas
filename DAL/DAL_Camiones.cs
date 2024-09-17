@@ -11,6 +11,7 @@ namespace DAL
     public class DAL_Camiones
     {
         //CRUD
+        //READ
         public static List<Camiones_VO> get_Camiones(params object[] parametros)
         {
             List<Camiones_VO> List = new List<Camiones_VO>();
