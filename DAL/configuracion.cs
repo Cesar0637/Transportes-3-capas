@@ -9,7 +9,7 @@ namespace DAL
     public class configuracion
     {
         static string _cadenaConecion = @"Data Source = DESKTOP-22CN6F9\MSSQLSERVER01;
-                                           Initial Catalog = Transportes;
+                                           Initial Catalog = Transporte;
                                             Integrated Security = true;";
 
         public static string CadenaConecion
