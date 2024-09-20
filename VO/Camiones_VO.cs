@@ -36,27 +36,27 @@ namespace VO
         //Por Defecto
         public Camiones_VO()
         {
-            _Id_Camion= 0;
-            _matricula= "";
-            _capacidad= 0;
-            _tipo_camion= "";
-            _urlfoto= string.Empty;
-            _marca= "";
-            _modelo= "";
-            _kilometraje=0 ;
-            _disponibilidad= true;
+            _Id_Camion = 0;
+            _matricula = "";
+            _capacidad = 0;
+            _tipo_camion = "";
+            _urlfoto = string.Empty;
+            _marca = "";
+            _modelo = "";
+            _kilometraje = 0;
+            _disponibilidad = true;
         }
         public Camiones_VO(DataRow dr)
         {
             _Id_Camion = int.Parse(dr["ID_Camion"].ToString());
-            _matricula= dr["matricula"].ToString();
-            _capacidad= int.Parse(dr["capacidad"].ToString()); ;
-            _tipo_camion= dr["tipo_camion"].ToString();
-            _urlfoto=dr["urlfoto"].ToString(); 
-            _marca= dr["marca"].ToString();
-            _modelo= dr["modelo"].ToString();
-            _kilometraje= double.Parse(dr["kilometraje"].ToString()); ;
-            _disponibilidad= bool.Parse(dr["disponibilidad"].ToString()); ;
+            _matricula = dr["matricula"].ToString();
+            _capacidad = int.Parse(dr["capacidad"].ToString()); ;
+            _tipo_camion = dr["tipo_camion"].ToString();
+            _urlfoto = dr["urlfoto"].ToString();
+            _marca = dr["marca"].ToString();
+            _modelo = dr["modelo"].ToString();
+            _kilometraje = double.Parse(dr["kilometraje"].ToString()); ;
+            _disponibilidad = bool.Parse(dr["disponibilidad"].ToString()); ;
         }
     }
 }

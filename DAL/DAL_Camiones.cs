@@ -104,6 +104,7 @@ namespace DAL
         //DELETE
         public static string eliminar_Camion(int id)
         {
+
             string salida = "";
             int respuesta = 0;
 

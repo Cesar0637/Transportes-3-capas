@@ -8,19 +8,19 @@
         <div class="row">
             <h3>Lista de Camiones</h3>
             <p>
-                <asp:Button ID="Insertar" runat="server" Text="Agregar" CssClass="btn btn-primary btn-xs" Width="85px" />
+                <asp:Button ID="Insertar" runat="server" Text="Agregar" CssClass="btn btn-primary btn-xs" Width="85px" OnClick="Insertar_Click"/>
             </p>
         </div>
         <div class="row">
             <asp:GridView ID="GVCamiones" runat="server"
                 CssClass="table table-bordered table-condensed"
                 AutoGenerateColumns="false"
-                DataKeyNames="ID_Camion"
+                DataKeyNames="Id_Camion"
                 OnRowDeleting="GVCamiones_RowDeleting"
                 OnRowCommand="GVCamiones_RowCommand"
                 OnRowEditing="GVCamiones_RowEditing"
                 OnRowUpdating="GVCamiones_RowUpdating"
-                OnRowCancelingEdit="GVCamiones_RowCancelingEdit" OnSelectedIndexChanged="GVCamiones_SelectedIndexChanged">
+                OnRowCancelingEdit="GVCamiones_RowCancelingEdit">
 
                 <Columns>
                     <asp:BoundField DataField="ID_Camion" HeaderText="Numero de Camion"
@@ -56,6 +56,10 @@
                         ControlStyle-Height="120px" ControlStyle-Width="120px"
                         DataImageUrlField="UrlFoto">
                     </asp:ImageField>
+                    <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="1" Text="Ver Detalles" ControlStyle-CssClass="btn btn-primary btn-xs" ItemStyle-Width="50px" />
+                    <asp:CommandField ButtonType="Button" HeaderText="2" ShowEditButton="true" ShowHeader="true" ControlStyle-CssClass="btn btn-warning btn-xs" ItemStyle-Width="50px" />
+
+                    <asp:CommandField ButtonType="Button" HeaderText="2" ShowDeleteButton="true" ShowHeader="true" ControlStyle-CssClass="btn btn-danger btn-xs" ItemStyle-Width="50px" />
                 </Columns>
 
             </asp:GridView>
