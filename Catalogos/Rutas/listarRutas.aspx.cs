@@ -63,14 +63,14 @@ namespace Transportes_3_capas.Catalogos.Rutas
                 
                 string id = GVRutas.DataKeys[varIndex].Values["Id_Ruta"].ToString();
                 
-                Response.Redirect("FormularioRutas.aspx?Id=" + id);
+                Response.Redirect("formulariosRutas.aspx?Id=" + id);
             }
         }
         protected void Insertar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("formularioRutas.aspx");
+            Response.Redirect("formulariosRutas.aspx");
         }
     }
     
-}
+    }
 
