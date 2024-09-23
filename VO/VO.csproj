@@ -47,7 +47,9 @@
     <Compile Include="Dirrecciones_VO.cs" />
     <Compile Include="Estados_VO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles_vo.cs" />
     <Compile Include="Rutas_VO.cs" />
+    <Compile Include="User_VO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

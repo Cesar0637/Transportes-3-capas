@@ -1,10 +1,13 @@
 ﻿using BLL;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Configuration;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Transportes_3_capas.Utilidades;
 using VO;
 
 namespace Transportes_3_capas.Catalogos.Rutas
@@ -59,13 +62,13 @@ namespace Transportes_3_capas.Catalogos.Rutas
                     Titulo.Text = "Agregar Nueva Ruta";
                     Subtitulo.Text = "";
 
-                    calsalida.SelectedDate=DateTime.Now.Date.AddDays(1);
-                    calsalida.VisibleDate=DateTime.Now.Date.AddDays(1);
-                    lblsalida.Text="Fecha de Salida: "+DateTime.Now.Date.AddDays(1).ToShortDateString();
-                    calestimada.SelectedDate=calsalida.SelectedDate.AddDays(4);
-                    calestimada.VisibleDate= calsalida.SelectedDate.AddDays(4);
-                    lblestimada.Text="Fecha estimada de LLegada: "+ calsalida.SelectedDate.AddDays(4).ToShortDateString();
-                    
+                    calsalida.SelectedDate = DateTime.Now.Date.AddDays(1);
+                    calsalida.VisibleDate = DateTime.Now.Date.AddDays(1);
+                    lblsalida.Text = "Fecha de Salida: " + DateTime.Now.Date.AddDays(1).ToShortDateString();
+                    calestimada.SelectedDate = calsalida.SelectedDate.AddDays(4);
+                    calestimada.VisibleDate = calsalida.SelectedDate.AddDays(4);
+                    lblestimada.Text = "Fecha estimada de LLegada: " + calsalida.SelectedDate.AddDays(4).ToShortDateString();
+
 
 
                 }
@@ -89,7 +92,7 @@ namespace Transportes_3_capas.Catalogos.Rutas
                         (c.Marca + " | " + c.Modelo + " | " + c.Matricula),
                         c.Id_Camion.ToString()
                         );
-                    ddlcamion.Items.Add(Ci);        
+                    ddlcamion.Items.Add(Ci);
                 }
             }
             ListItem ddlchoferes_I = new ListItem("Seleccione un chofer", "0");
@@ -143,8 +146,8 @@ namespace Transportes_3_capas.Catalogos.Rutas
             fecha_salida_global = calsalida.SelectedDate;
             fecha_llegada_global = calsalida.SelectedDate.AddDays(4);
 
-            lblsalida.Text= "Salida Estimada \n" + fecha_salida_global.ToShortDateString();
-            lblestimada.Text="Llegada estimada \n" + fecha_llegada_global.ToShortDateString();
+            lblsalida.Text = "Salida Estimada \n" + fecha_salida_global.ToShortDateString();
+            lblestimada.Text = "Llegada estimada \n" + fecha_llegada_global.ToShortDateString();
             calestimada.SelectedDate = fecha_llegada_global;
             calestimada.VisibleDate = fecha_salida_global;
         }
@@ -179,20 +182,26 @@ namespace Transportes_3_capas.Catalogos.Rutas
                     titulo = "Error";
                     msg = respuesta;
                     tipo = "error";
+                    SweetAlert.Sweet_Alert(titulo, msg, tipo, this.Page, this.GetType());
                 }
                 else
                 {
                     titulo = "Ok!";
                     msg = respuesta;
                     tipo = "success";
+                    SweetAlert.Sweet_Alert(titulo, msg, tipo, this.Page, this.GetType(), "/Catalogos/Rutas/listarRutas.aspx");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                titulo="Error";
+                titulo = "Error";
                 msg = ex.Message;
                 tipo = "error";
+                SweetAlert.Sweet_Alert(titulo, msg, tipo, this.Page, this.GetType());
             }
+            
         }
+
+
     }
 }
