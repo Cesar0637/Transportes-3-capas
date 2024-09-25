@@ -56,7 +56,7 @@ namespace VO
             _marca = dr["marca"].ToString();
             _modelo = dr["modelo"].ToString();
             _kilometraje = double.Parse(dr["kilometraje"].ToString()); ;
-            _disponibilidad = bool.Parse(dr["disponibilidad"].ToString()); ;
+            _disponibilidad = bool.Parse(dr["disponibilidad"].ToString()); 
         }
     }
 }
